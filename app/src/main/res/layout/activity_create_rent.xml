@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateRentActivity">
+
+    <Button
+        android:id="@+id/btn_rent_create"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="CREATE"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:backgroundTint="@color/proj_blue"/>
+
+    <View
+        android:id="@+id/top_page_view"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_views3"/>
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/rent_add_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/addimage"
+            app:civ_circle_background_color="#90BDB8B8"/>
+
+        <EditText
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/edt_rent_subject"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:hint="Enter Neighbourhood Subject"/>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/textView6"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="New Rent Neighbourhood"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="6dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/arrow_back"
+            android:clickable="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="#5289A1">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_back"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</RelativeLayout>

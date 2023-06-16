@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Register Here"
+        android:textColor="@color/proj_blue"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtemail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:textColorHint="@color/underline"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edtemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/edtpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
+
+    <EditText
+        android:textColorHint="@color/underline"
+        android:layout_marginTop="340dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edtpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="46dp"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnreg"
+        app:layout_constraintStart_toStartOf="@+id/edtemail"
+        app:layout_constraintTop_toBottomOf="@+id/edtemail" />
+
+    <Button
+        android:textColor="@color/white"
+        android:backgroundTint="@color/proj_blue"
+        android:layout_marginTop="430dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btnreg"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="40dp"
+        android:text="REGISTER"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/edtpass"
+        app:layout_constraintTop_toBottomOf="@+id/edtpass" />
+
+    <LinearLayout
+        android:layout_marginTop="530dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout2"
+        android:layout_width="400dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="269dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnreg">
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/textView2"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:paddingLeft="8dp"
+            android:text="Do you already have an account?" />
+
+        <TextView
+            android:id="@+id/txtlogin"
+            android:layout_width="15dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="Login?"
+            android:textColor="#8DC9FA" />
+    </LinearLayout>
+
+    <EditText
+        android:textColorHint="@color/underline"
+        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:hint="Enter Full Name"/>
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateProfileActivity"
+    android:background="@color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/prof_img"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/addimage"/>
+
+    <EditText
+        android:layout_marginTop="230dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edtfirstname"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:hint="Enter First Name"
+        android:textColorHint="@color/underline"/>
+
+    <EditText
+        android:layout_marginTop="320dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edtlastname"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:hint="Enter Last Name"
+        android:textColorHint="@color/underline"/>
+
+    <EditText
+        android:hint="Enter Your Email"
+        android:layout_marginTop="410dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edt_prof_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:backgroundTint="@color/proj_blue"
+        android:layout_marginTop="505dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_create_profile"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="CREATE" />
+
+
+</RelativeLayout>
