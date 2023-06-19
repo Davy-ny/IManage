@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.cardview.widget.CardView
@@ -15,6 +16,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var payment: CardView
     lateinit var manage: CardView
+    lateinit var create: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.nav_home -> Toast.makeText(applicationContext, "Clicked Home", Toast.LENGTH_SHORT).show()
-                R.id.nav_message -> Toast.makeText(applicationContext, "Clicked Message", Toast.LENGTH_SHORT).show()
+                R.id.nav_profile -> Toast.makeText(applicationContext, "Clicked Message", Toast.LENGTH_SHORT).show()
                 R.id.nav_sync -> Toast.makeText(applicationContext, "Clicked Sync", Toast.LENGTH_SHORT).show()
                 R.id.nav_trash -> Toast.makeText(applicationContext, "Clicked Delete", Toast.LENGTH_SHORT).show()
                 R.id.nav_setting -> Toast.makeText(applicationContext, "Clicked Setting", Toast.LENGTH_SHORT).show()
@@ -44,6 +46,11 @@ class HomeActivity : AppCompatActivity() {
             }
             true
 
+        }
+
+        create = findViewById(R.id.txt_create_profile)
+        create.setOnClickListener{
+            startActivity(Intent(this,CreateProfileActivity::class.java))
         }
 
         payment = findViewById(R.id.make_payment)

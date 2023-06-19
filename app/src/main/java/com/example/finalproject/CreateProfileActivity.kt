@@ -81,7 +81,7 @@ class CreateProfileActivity : AppCompatActivity() {
                                 //Proceed to store data to the db
                                 ref.downloadUrl.addOnSuccessListener {
                                     var imageUrl = it.toString()
-                                    var profileData = Profile(firstName,lastName,userEmail,userId,imageId,userId)
+                                    var profileData = Profile(firstName,lastName,userEmail,imageUrl,imageId,userId)
 
                                     var dbRef = FirebaseDatabase.getInstance()
                                         .getReference().child("Profiles/$imageId")
@@ -92,6 +92,7 @@ class CreateProfileActivity : AppCompatActivity() {
                                         }
                                     }
                                     Toast.makeText(applicationContext, "Upload Successful", Toast.LENGTH_SHORT).show()
+                                    finish()
                                 }
                             } else {
                                 Toast.makeText(this, it.exception!!.message,  Toast.LENGTH_SHORT)
@@ -102,6 +103,8 @@ class CreateProfileActivity : AppCompatActivity() {
                 }
             }
         }
+
+
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -119,4 +122,6 @@ class CreateProfileActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }

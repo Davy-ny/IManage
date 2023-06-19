@@ -22,25 +22,23 @@ import com.google.firebase.storage.StorageReference
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.IOException
 
-class CreateRentActivity : AppCompatActivity() {
-    lateinit var back:CardView
-    lateinit var rent_img:CircleImageView
-    lateinit var rent_sub:EditText
-    lateinit var btn_rent:Button
+class CreateWasteActivity : AppCompatActivity() {
+    lateinit var back: CardView
+    lateinit var waste_img: CircleImageView
+    lateinit var waste_sub: EditText
+    lateinit var btn_waste: Button
     var PICK_IMAGE_REQUEST = 100
     lateinit var filePath: Uri
     lateinit var firebaseStore: FirebaseStorage
     lateinit var storageRef: StorageReference
-    lateinit var mAuth: FirebaseAuth
     private lateinit var dbRef: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userArrayList:ArrayList<User>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_rent)
+        setContentView(R.layout.activity_create_waste)
 
-
-        userRecyclerView = findViewById(R.id.list_view1)
+        userRecyclerView = findViewById(R.id.list_view2)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
@@ -53,13 +51,13 @@ class CreateRentActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext,ManagePropertyActivity::class.java))
         }
 
-        rent_img = findViewById(R.id.rent_add_img)
-        rent_sub = findViewById(R.id.edt_rent_subject)
-        btn_rent = findViewById(R.id.btn_rent_create)
+        waste_img = findViewById(R.id.waste_add_img)
+        waste_sub = findViewById(R.id.edt_waste_subject)
+        btn_waste = findViewById(R.id.btn_waste_create)
 
         firebaseStore = FirebaseStorage.getInstance()
         storageRef = firebaseStore.getReference()
-        rent_img.setOnClickListener{
+        waste_img.setOnClickListener{
             //OPen gallery to select an image
             val intent = Intent()
             intent.type = "image/*"
@@ -76,7 +74,7 @@ class CreateRentActivity : AppCompatActivity() {
             filePath = data.data!!
             try {
                 val bitmap = MediaStore.Images.Media.getBitmap(contentResolver,filePath)
-                rent_img.setImageBitmap(bitmap)
+                waste_img.setImageBitmap(bitmap)
             }catch (e: IOException){
                 e.printStackTrace()
             }
@@ -93,7 +91,7 @@ class CreateRentActivity : AppCompatActivity() {
                         var user = userSnapshot.getValue(User::class.java)
                         userArrayList.add(user!!)
                     }
-                    userRecyclerView.adapter = MyAdapter(this@CreateRentActivity,userArrayList)
+                    userRecyclerView.adapter = MyAdapter(this@CreateWasteActivity,userArrayList)
                 }
             }
 

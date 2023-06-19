@@ -105,6 +105,7 @@
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/create_security"
                     android:layout_width="350dp"
                     android:layout_height="72dp"
                     android:layout_marginLeft="5dp"
@@ -145,7 +146,6 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/create_waste"
             android:clickable="true"
             android:backgroundTint="@color/white"
             android:background="@color/white"
@@ -164,6 +164,7 @@
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/create_waste"
                     android:layout_width="350dp"
                     android:layout_height="96dp"
                     android:layout_marginLeft="5dp"

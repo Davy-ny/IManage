@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateRentActivity"
+    tools:context=".CreateSecurityActivity"
     android:background="@color/white"
     android:backgroundTint="@color/white">
 
     <Button
-        android:id="@+id/btn_rent_create"
+        android:id="@+id/btn_sec_create"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:text="CREATE"
@@ -30,7 +30,7 @@
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/rent_add_img"
+            android:id="@+id/sec_add_img"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
@@ -41,15 +41,14 @@
         <EditText
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
-            android:id="@+id/edt_rent_subject"
+            android:id="@+id/edt_sec_subject"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text"
             android:text=""
-            android:hint="Enter Neighbourhood Subject"
-            android:textColorHint="@color/underline"/>
+            android:hint="Enter Neighbourhood Subject"/>
 
 
 
@@ -61,7 +60,7 @@
         android:id="@+id/textView6"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:text="New Rent Neighbourhood"
+        android:text="New Security Neighbourhood"
         android:textSize="25sp"
         android:textColor="@color/white"
         />
