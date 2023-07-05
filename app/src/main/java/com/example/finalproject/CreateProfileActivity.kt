@@ -6,7 +6,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
@@ -22,6 +21,7 @@ class CreateProfileActivity : AppCompatActivity() {
     lateinit var myFirstName:EditText
     lateinit var myLastName:EditText
     lateinit var myEmailProfile:EditText
+    lateinit var myHouseNumber:EditText
     lateinit var btncreate:Button
     lateinit var imageView:CircleImageView
     lateinit var progress: ProgressDialog
@@ -36,6 +36,7 @@ class CreateProfileActivity : AppCompatActivity() {
         myFirstName = findViewById(R.id.edtfirstname)
         myLastName = findViewById(R.id.edtlastname)
         myEmailProfile = findViewById(R.id.edt_prof_email)
+        myHouseNumber = findViewById(R.id.edt_House_Number)
         btncreate = findViewById(R.id.btn_create_profile)
         imageView = findViewById(R.id.prof_img)
         progress = ProgressDialog(this)
@@ -55,6 +56,7 @@ class CreateProfileActivity : AppCompatActivity() {
                 var firstName = myFirstName.text.toString().trim()
                 var lastName = myLastName.text.toString().trim()
                 var userEmail = myEmailProfile.text.toString()
+                var houseNumber = myHouseNumber.text.toString().trim()
                 var imageId = System.currentTimeMillis().toString()
 //            mAuth = FirebaseAuth.getInstance()
                 var userId = "mAuth.currentUser!!.uid"
@@ -62,6 +64,9 @@ class CreateProfileActivity : AppCompatActivity() {
                 if(firstName.isEmpty()){
                     myFirstName.setError("Please fill this input")
                     myFirstName.requestFocus()
+                }else if(houseNumber.isEmpty()){
+                    myHouseNumber.setError("Please fill this input")
+                    myHouseNumber.requestFocus()
                 }else if(lastName.isEmpty()){
                     myLastName.setError("Please fill this input")
                     myLastName.requestFocus()
@@ -81,7 +86,7 @@ class CreateProfileActivity : AppCompatActivity() {
                                 //Proceed to store data to the db
                                 ref.downloadUrl.addOnSuccessListener {
                                     var imageUrl = it.toString()
-                                    var profileData = Profile(firstName,lastName,userEmail,imageUrl,imageId,userId)
+                                    var profileData = Profile(firstName,lastName,userEmail,imageUrl,imageId,userId,houseNumber)
 
                                     var dbRef = FirebaseDatabase.getInstance()
                                         .getReference().child("Profiles/$imageId")

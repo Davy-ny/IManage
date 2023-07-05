@@ -1,6 +1,7 @@
 package com.example.finalproject
 
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 import java.io.IOException
 
 class CreateSecurityActivity : AppCompatActivity() {
+    lateinit var progress:ProgressDialog
     lateinit var back: CardView
     lateinit var security_img: CircleImageView
     lateinit var security_sub: EditText
@@ -38,6 +40,10 @@ class CreateSecurityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_security)
+
+        progress = ProgressDialog(this)
+        progress.setTitle("Select successful")
+        progress.setMessage("Please wait...")
 
         userRecyclerView = findViewById(R.id.list_view1)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -55,6 +61,35 @@ class CreateSecurityActivity : AppCompatActivity() {
         security_img = findViewById(R.id.sec_add_img)
         security_sub = findViewById(R.id.edt_sec_subject)
         btn_security = findViewById(R.id.btn_sec_create)
+        btn_security.setOnClickListener {
+            var securitySubject = security_sub.text.toString().trim()
+            if (securitySubject.isEmpty()){
+                security_sub.setError("Please fill this field")
+                security_sub.requestFocus()
+            }else{
+                var id = System.currentTimeMillis().toString()
+                var ref1 = FirebaseDatabase.getInstance().getReference().child("SecGroups/$id")
+                var groupData = Rentgroup(securitySubject,id)
+                ref1.setValue(groupData)
+                for (i in 0 .. (userArrayList.size - 1)){
+                    progress.show()
+                    var currentTime = System.currentTimeMillis().toString()
+                    //progress.dismiss()
+                    if (userArrayList.get(i).getIsChecked() == true){
+                        var ref2 = FirebaseDatabase.getInstance().getReference().child("Securitygroups/$securitySubject/$currentTime"+i)
+                        var userData = User(
+                            userArrayList.get(i).firstName,
+                            userArrayList.get(i).lastName,
+                            userArrayList.get(i).userEmail,
+                            userArrayList.get(i).profileImage,
+                            userArrayList.get(i).houseNo
+                        )
+                        ref2.setValue(userData)
+                    }
+                }
+            }
+
+        }
 
         firebaseStore = FirebaseStorage.getInstance()
         storageRef = firebaseStore.getReference()

@@ -7,6 +7,7 @@ class Profile {
     var profileImage:String = ""
     var userId:String = ""
     var imageId:String = ""
+    var houseNo:String = ""
 
     constructor(
         firstName: String,
@@ -14,7 +15,8 @@ class Profile {
         userEmail: String,
         profileImage: String,
         userId: String,
-        imageId:String
+        imageId:String,
+        houseNo:String
     ) {
         this.firstName = firstName
         this.lastName = lastName
@@ -22,6 +24,9 @@ class Profile {
         this.profileImage = profileImage
         this.userId = userId
         this.imageId = imageId
+        this.houseNo = houseNo
     }
     constructor()
 }
+
+class Nav_Profile{}

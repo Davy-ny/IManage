@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakePaymentActivity">
+    tools:context=".MakePaymentActivity"
+    android:background="@color/white">
 
     <View
         android:id="@+id/top_view"
@@ -45,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:text="RENT PAYMENT"
                     android:layout_marginLeft="15dp"
-                    android:textSize="30sp"
+                    android:textSize="21sp"
                     android:textStyle="bold"
                     android:textColor="#339E38"
                     android:layout_gravity="center_vertical"
@@ -76,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:text="SECURITY PAYMENT"
                     android:layout_marginLeft="15dp"
-                    android:textSize="30sp"
+                    android:textSize="21sp"
                     android:textStyle="bold"
                     android:textColor="@color/proj_blue"
                     android:layout_gravity="center_vertical"
@@ -107,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:text="WASTE PAYMENT"
                     android:layout_marginLeft="15dp"
-                    android:textSize="30sp"
+                    android:textSize="21sp"
                     android:textStyle="bold"
                     android:textColor="@color/proj_brown"
                     android:layout_gravity="center_vertical"

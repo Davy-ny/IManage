@@ -16,19 +16,35 @@
         android:layout_height="60dp"
         android:src="@drawable/addimage"/>
 
-    <TextView
-        android:layout_marginLeft="5dp"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_name"
-        android:paddingTop="8dp"
-        android:textSize="20sp"
-        android:text="Dave Nyambune"
-        android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_first"
+            android:paddingTop="8dp"
+            android:textSize="20sp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
 
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_last"
+            android:paddingTop="8dp"
+            android:textSize="20sp"
+            android:text="Nyambune"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </LinearLayout>
     <TextView
-        android:id="@+id/user_email"
+        android:id="@+id/my_user_email"
         android:layout_marginLeft="5dp"
         android:textColor="@color/black"
         android:layout_width="wrap_content"

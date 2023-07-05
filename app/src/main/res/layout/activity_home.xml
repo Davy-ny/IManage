@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
-    android:id="@+id/drawer">
+    android:id="@+id/my_drawer">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeActivity">
+        tools:context=".HomeActivity"
+        android:background="@color/white">
 
         <View
             android:id="@+id/top_view"
@@ -59,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:text="MAKE PAYMENT"
                         android:layout_marginLeft="15dp"
-                        android:textSize="30sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         android:textColor="#339E38"
                         android:layout_gravity="center_vertical"
@@ -95,10 +96,10 @@
                         android:layout_height="wrap_content"
                         android:text="MANAGE PROPERTY"
                         android:layout_gravity="center_vertical"
-                        android:textSize="26sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
                         android:textColor="#C1872A0D"
-                        android:layout_marginLeft="10dp"/>
+                        android:layout_marginLeft="8dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -106,7 +107,7 @@
         </GridLayout>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HOME"
@@ -122,6 +123,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="5dp">
             <androidx.cardview.widget.CardView
+                android:id="@+id/list_drawout"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:backgroundTint="#5289A1">
@@ -131,18 +133,6 @@
                     android:src="@drawable/menu"/>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-        <TextView
-            android:clickable="true"
-            android:id="@+id/txt_create_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create Profile"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:layout_marginTop="140dp"
-            android:layout_marginLeft="250dp"
-            />
 
 
     </RelativeLayout>

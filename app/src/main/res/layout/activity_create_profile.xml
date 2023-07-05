@@ -13,13 +13,22 @@
         android:layout_height="80dp"
         android:background="@drawable/bg_views3"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/prof_img"
-        android:layout_marginTop="90dp"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/addimage"/>
+        android:layout_marginTop="90dp"
+        android:backgroundTint="@color/underline">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/prof_img"
+            android:layout_centerHorizontal="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/addimage"
+            />
+    </LinearLayout>
+
 
     <EditText
         android:layout_marginTop="230dp"
@@ -61,7 +70,7 @@
 
     <Button
         android:backgroundTint="@color/proj_blue"
-        android:layout_marginTop="505dp"
+        android:layout_marginTop="580dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/btn_create_profile"
         android:layout_width="200dp"
@@ -78,6 +87,31 @@
         android:text="Create Profile"
         android:textSize="28sp"
         android:textColor="@color/white"
+        />
+
+    <EditText
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edt_House_Number"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:hint="Enter House No."
+        android:textColor="@color/black"
+        android:textColorHint="@color/underline"/>
+
+    <TextView
+        android:id="@+id/edit_profile"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="@color/proj_blue"
+        android:background="@drawable/bg_views4"
+        android:textSize="17sp"
         />
 
 

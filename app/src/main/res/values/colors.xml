@@ -6,4 +6,5 @@
     <color name="proj_green">#339E38</color>
     <color name="proj_blue">#5289A1</color>
     <color name="proj_brown">#C1872A0D</color>
+    <color name="proj_cardview">#E3F3F3</color>
 </resources>

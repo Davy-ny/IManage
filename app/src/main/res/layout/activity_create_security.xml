@@ -39,6 +39,8 @@
             app:civ_circle_background_color="#90BDB8B8"/>
 
         <EditText
+            android:textColor="@color/black"
+            android:textColorHint="@color/underline"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
             android:id="@+id/edt_sec_subject"
@@ -58,10 +60,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="60dp"
         android:id="@+id/textView6"
-        android:layout_width="340dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Security Neighbourhood"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textColor="@color/white"
         />
 
