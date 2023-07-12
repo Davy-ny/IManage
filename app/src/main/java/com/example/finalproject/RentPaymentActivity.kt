@@ -1,20 +1,33 @@
 package com.example.finalproject
 
+import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalproject.databinding.ActivityRentUsersBinding
+import com.example.finalproject.databinding.NavHeaderBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class RentPaymentActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRentUsersBinding
+    private lateinit var rentgroup: Rentgroup
+    private lateinit var uid: String
+    lateinit var dialog: Dialog
+    lateinit var storageRef: StorageReference
+    lateinit var firebaseStore: FirebaseStorage
     lateinit var back: CardView
     private lateinit var dbRef: DatabaseReference
     private lateinit var myRecyclerView: RecyclerView
@@ -39,6 +52,11 @@ class RentPaymentActivity : AppCompatActivity() {
             userArrayList = arrayListOf<Rentgroup>()
             getUserData()
 
+        mAuth = FirebaseAuth.getInstance()
+        uid = mAuth.currentUser?.uid.toString()
+
+
+
     }
     private fun getUserData() {
         dbRef = FirebaseDatabase.getInstance().getReference("Groups")
@@ -50,8 +68,23 @@ class RentPaymentActivity : AppCompatActivity() {
                         var rent = userSnapshot.getValue(Rentgroup::class.java)
                         userArrayList.add(rent!!)
                     }
-                    myRecyclerView.adapter = CustomAdapter(this@RentPaymentActivity,userArrayList)
+                    var adapter = CustomAdapter(this@RentPaymentActivity,userArrayList)
+                    myRecyclerView.adapter = adapter
+                    adapter.setOnItemClickListener(object : CustomAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            Toast.makeText(applicationContext, "You clicked on item no. $position ", Toast.LENGTH_SHORT).show()
+                            //var intent = Intent(this@RentPaymentActivity,RentUsersActivity::class.java)
+                            startActivity(Intent(applicationContext,RentUsersActivity::class.java))
+
+                            //Put extra data
+
+
+                        }
+
+                    })
+                   
                 }
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -60,4 +93,5 @@ class RentPaymentActivity : AppCompatActivity() {
 
         })
     }
+
 }

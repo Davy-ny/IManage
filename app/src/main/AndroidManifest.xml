@@ -12,8 +12,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/neighbourhood"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinalProject"
+        android:theme="@style/finalproject"
         tools:targetApi="31">
+        <activity
+            android:name=".RentTabsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WasteUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecurityUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RentUsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetActivity"
+            android:exported="false" />
         <activity
             android:name=".WasteAdminLogin"
             android:exported="false" />

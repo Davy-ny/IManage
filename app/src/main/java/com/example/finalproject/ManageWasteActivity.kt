@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,7 +51,14 @@ class ManageWasteActivity : AppCompatActivity() {
                         var rent = userSnapshot.getValue(Rentgroup::class.java)
                         userArrayList.add(rent!!)
                     }
-                    myRecyclerView.adapter = CustomAdapter(this@ManageWasteActivity,userArrayList)
+                    var adapter = CustomAdapter(this@ManageWasteActivity,userArrayList)
+                    myRecyclerView.adapter = adapter
+                    adapter.setOnItemClickListener(object : CustomAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            Toast.makeText(applicationContext, "You clicked on item no. $position ", Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
                 }
             }
 

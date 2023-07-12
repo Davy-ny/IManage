@@ -11,7 +11,6 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -84,12 +83,12 @@ class CreateRentActivity : AppCompatActivity() {
                 rent_sub.setError("Please fill this field")
                 rent_sub.requestFocus()
             }else{
-                progress.show()
                 var id = System.currentTimeMillis().toString()
                 var ref1 = FirebaseDatabase.getInstance().getReference().child("Groups/$id")
                 var groupData = Rentgroup(rentSubject,id)
                 ref1.setValue(groupData)
                 for (i in 0 .. (userArrayList.size - 1)){
+                    progress.show()
                     var currentTime = System.currentTimeMillis().toString()
                     if (userArrayList.get(i).getIsChecked() == true){
                         var ref2 = FirebaseDatabase.getInstance().getReference().child("Rentgroups/$rentSubject/$currentTime"+i)
@@ -100,13 +99,15 @@ class CreateRentActivity : AppCompatActivity() {
                             userArrayList.get(i).profileImage,
                             userArrayList.get(i).houseNo
                         )
-                        progress.dismiss()
                         ref2.setValue(userData)
+                        startActivity(Intent(this@CreateRentActivity,RentAdminLogin::class.java))
                     }
                 }
             }
-
         }
+        progress.dismiss()
+
+
         //Adding image
         firebaseStore = FirebaseStorage.getInstance()
         storageRef = firebaseStore.getReference()

@@ -71,7 +71,6 @@ class CreateWasteActivity : AppCompatActivity() {
                 for (i in 0 .. (userArrayList.size - 1)){
                     progress.show()
                     var currentTime = System.currentTimeMillis().toString()
-                    //progress.dismiss()
                     if (userArrayList.get(i).getIsChecked() == true){
                         var ref2 = FirebaseDatabase.getInstance().getReference().child("wstgroups/$wasteSubject/$currentTime"+i)
                         var userData = User(
@@ -82,11 +81,12 @@ class CreateWasteActivity : AppCompatActivity() {
                             userArrayList.get(i).houseNo
                         )
                         ref2.setValue(userData)
+                        startActivity(Intent(this@CreateWasteActivity,WasteAdminLogin::class.java))
                     }
                 }
             }
-
         }
+        progress.dismiss()
 
         firebaseStore = FirebaseStorage.getInstance()
         storageRef = firebaseStore.getReference()

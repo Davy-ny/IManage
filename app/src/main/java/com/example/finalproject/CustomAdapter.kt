@@ -9,14 +9,24 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter(private val context: Context, private var userSubject : ArrayList<Rentgroup>) : RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
 
+    //Clickable recyclerview item
+    private var mListener: onItemClickListener? = null
+    interface onItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener) {
+        mListener = listener
+    }
+    //End of clickable recyclerview
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomAdapter.MyViewHolder {
-        var itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_2,parent,false)
-        return CustomAdapter.MyViewHolder(itemView)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_2, parent, false)
+        return CustomAdapter.MyViewHolder(itemView,mListener)//Add listener
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        var currentItem = userSubject[position]
+        val currentItem = userSubject[position]
         holder.mTxtSubjectName.text = currentItem.groupName
     }
 
@@ -24,8 +34,16 @@ class CustomAdapter(private val context: Context, private var userSubject : Arra
         return userSubject.size
     }
 
-
-    class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View, listener: onItemClickListener?) : RecyclerView.ViewHolder(itemView) {
         var mTxtSubjectName: TextView = itemView.findViewById(R.id.subj_name)
+
+        //Enables clickable action/Given command
+        init {
+            listener?.let { listener ->
+                itemView.setOnClickListener {
+                    listener.onItemClick(adapterPosition)
+                }
+            }
+        }
     }
 }

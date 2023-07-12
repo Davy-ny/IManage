@@ -59,6 +59,7 @@ class LoginActivity : AppCompatActivity() {
                     }
             }
             txtforgot.setOnClickListener {
+                startActivity(Intent(this,ResetActivity::class.java))
 
             }
             txtreg.setOnClickListener{

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecurityPaymentActivity">
+    tools:context=".SecurityUsersActivity"
+    android:background="@color/white">
 
     <View
         android:id="@+id/top_page_view"
@@ -12,10 +13,37 @@
         android:layout_height="90dp"
         android:background="@drawable/bg_views3"/>
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:id="@+id/search"
+        android:iconifiedByDefault="false"
+        android:searchHintIcon="@null"
+        android:queryHint="Search..."
+        android:focusable="false"
+        android:closeIcon="@drawable/clear"
+        android:searchIcon="@drawable/search"
+        />
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="70dp"
+        android:id="@+id/textView6"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="Security Users"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="3dp"
         android:layout_marginLeft="6dp">
         <androidx.cardview.widget.CardView
             android:id="@+id/arrow_back"
@@ -31,24 +59,10 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_view2"
-        android:layout_marginTop="90dp"
+        android:id="@+id/list_view3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        tools:listitem="@layout/item_2"
-        />
-
-    <TextView
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="60dp"
-        android:id="@+id/textView6"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:text="Security Payment"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        />
+        tools:listitem="@layout/item"
+        android:layout_below="@id/search"/>
 
 </RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RentTabsActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/top_page_view"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_views3"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="6dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/arrow_back"
+                android:clickable="true"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#5289A1">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/arrow_back"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:text="...Payments"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:background="@color/underline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout"
+        app:tabIndicatorColor="@color/proj_green"
+        app:tabSelectedTextColor="@color/proj_blue"
+        app:tabTextColor="@color/black"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/viewPager"
+        android:background="@color/white"
+        android:layout_weight="1"/>
+
+</LinearLayout>
