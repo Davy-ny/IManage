@@ -56,6 +56,7 @@ class ManageWasteActivity : AppCompatActivity() {
                     adapter.setOnItemClickListener(object : CustomAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             Toast.makeText(applicationContext, "You clicked on item no. $position ", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@ManageWasteActivity,WasteTabsActivity::class.java))
                         }
 
                     })

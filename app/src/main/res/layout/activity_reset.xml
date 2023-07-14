@@ -9,7 +9,7 @@
     android:background="@color/white">
 
   <View
-    android:layout_marginTop="658dp"
+      android:layout_marginTop="710dp"
       android:layout_width="match_parent"
       android:layout_height="80dp"
       android:background="@drawable/bg_views2"/>
@@ -58,6 +58,8 @@
 
 
   <EditText
+      android:textColorHint="@color/underline"
+      android:textColor="@color/black"
       android:hint="Enter Email Address"
       android:layout_marginTop="200dp"
       android:layout_centerHorizontal="true"

@@ -28,7 +28,7 @@
             android:id="@+id/my_first"
             android:paddingTop="8dp"
             android:textSize="20sp"
-            android:text=""
+            android:text="Dave"
             android:textColor="@color/black"
             android:textStyle="bold"/>
 

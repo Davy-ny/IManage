@@ -57,6 +57,7 @@ class ManageSecurityActivity : AppCompatActivity() {
                     adapter.setOnItemClickListener(object : CustomAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
                             Toast.makeText(applicationContext, "You clicked on item no. $position ", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@ManageSecurityActivity,SecurityTabsActivity::class.java))
                         }
 
                     })

@@ -15,6 +15,12 @@
         android:theme="@style/finalproject"
         tools:targetApi="31">
         <activity
+            android:name=".WasteTabsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecurityTabsActivity"
+            android:exported="false" />
+        <activity
             android:name=".RentTabsActivity"
             android:exported="false" />
         <activity

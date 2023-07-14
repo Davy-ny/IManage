@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RentDetailsFragment">
+    tools:context=".WasteDetailsFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,12 +12,5 @@
         android:layout_margin="150dp"
         android:textSize="18sp"/>
 
-
-    <!--<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_view1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_4"
-        android:layout_below="@id/search"/>-->
 
 </FrameLayout>

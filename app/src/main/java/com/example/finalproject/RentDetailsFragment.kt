@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class DetailsFragment : Fragment() {
+class RentDetailsFragment : Fragment() {
 
 
     override fun onCreateView(
