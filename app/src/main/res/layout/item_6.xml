@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1,2,3">
+
+    <TableRow>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_house_number"
+            android:layout_column="1"
+            android:paddingLeft="35dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_amount"
+            android:layout_column="2"
+            android:paddingLeft="35dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_status"
+            android:layout_column="3"
+            android:paddingLeft="35dp"
+            />
+    </TableRow>
+
+</TableLayout>

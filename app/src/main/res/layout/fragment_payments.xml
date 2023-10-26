@@ -3,34 +3,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RentPaymentsFragment">
+    tools:context=".Agent.RentPaymentsFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="130dp"
         >
 
-
-        <EditText
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/txt_amount"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Amount to be Paid"
-            android:textColorHint="@color/underline"
-            android:textColor="@color/black"
-            android:ems="10"
-            android:inputType="number" />
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="25dp"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/proj_green"
+                    android:textSize="17sp"
+                    android:text="Amount to be paid:"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:text="Ksh."
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/amount_set"
+                    android:padding="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text="50,000"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal">
+            <EditText
+                android:id="@+id/txt_amount"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter Amount to be Paid"
+                android:textColorHint="@color/underline"
+                android:textColor="@color/black"
+                android:ems="10"
+                android:inputType="number"
+                />
+
+            <ImageView
+                android:id="@+id/edit_amaount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/edit"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
 
         <Button
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="85dp"
             android:text="Set Amount"
             android:backgroundTint="@color/proj_blue"
             android:id="@+id/btn_set_amount"/>
     </androidx.cardview.widget.CardView>
+
+    <TableLayout
+        android:layout_marginTop="130dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1,2,3"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--<DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="JAN 01 2023"
+                android:background="@color/white"
+                android:backgroundTint="@color/underline"
+                style="?android:spinnerStyle"
+                android:id="@+id/date_picker"
+                />-->
+        </LinearLayout>
+
+        <TableRow
+            android:background="@color/underline">
+            <TextView
+                android:textColor="@color/black"
+                android:text="House.No"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:text="Amount"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_column="1"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:text="Status"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_column="1"/>
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_6"/>
+
+    </TableLayout>
 
 </FrameLayout>

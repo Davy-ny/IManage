@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/white"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".FirebaseAuth.MainActivity">
 
     <TextView
         android:layout_centerHorizontal="true"

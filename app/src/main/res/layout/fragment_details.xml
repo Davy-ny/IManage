@@ -3,21 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RentDetailsFragment">
+    tools:context=".Agent.RentDetailsFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Details"
-        android:layout_margin="150dp"
+        android:text="Resident Details"
+        android:layout_marginLeft="140dp"
         android:textSize="18sp"/>
 
 
-    <!--<androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="25dp"
         android:id="@+id/list_view1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_4"
-        android:layout_below="@id/search"/>-->
+        android:layout_below="@id/search"/>
 
 </FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WasteTabsActivity"
+    tools:context=".Agent.WasteTabsActivity"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -33,6 +33,7 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
         <TextView
+            android:id="@+id/waste_group"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="60dp"
             android:layout_width="wrap_content"

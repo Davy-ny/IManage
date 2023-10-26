@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:text="Email:"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"/>
 
                 <TextView

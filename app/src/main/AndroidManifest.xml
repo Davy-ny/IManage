@@ -15,79 +15,79 @@
         android:theme="@style/finalproject"
         tools:targetApi="31">
         <activity
-            android:name=".WasteTabsActivity"
+            android:name=".Agent.WasteTabsActivity"
             android:exported="false" />
         <activity
-            android:name=".SecurityTabsActivity"
+            android:name=".Agent.SecurityTabsActivity"
             android:exported="false" />
         <activity
-            android:name=".RentTabsActivity"
+            android:name=".Agent.RentTabsActivity"
             android:exported="false" />
         <activity
-            android:name=".WasteUsersActivity"
+            android:name=".Tenant.WasteUsersActivity"
             android:exported="false" />
         <activity
-            android:name=".SecurityUsersActivity"
+            android:name=".Tenant.SecurityUsersActivity"
             android:exported="false" />
         <activity
-            android:name=".RentUsersActivity"
+            android:name=".Tenant.RentUsersActivity"
             android:exported="false" />
         <activity
-            android:name=".ResetActivity"
+            android:name=".Common.ResetActivity"
             android:exported="false" />
         <activity
-            android:name=".WasteAdminLogin"
+            android:name=".Agent.WasteAdminLogin"
             android:exported="false" />
         <activity
-            android:name=".SecurityAdminLogin"
+            android:name=".Agent.SecurityAdminLogin"
             android:exported="false" />
         <activity
-            android:name=".RentAdminLogin"
+            android:name=".Agent.RentAdminLogin"
             android:exported="false" />
         <activity
-            android:name=".ManageWasteActivity"
+            android:name=".Agent.ManageWasteActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageSecurityActivity"
+            android:name=".Agent.ManageSecurityActivity"
             android:exported="false" />
         <activity
-            android:name=".SecurityPaymentActivity"
+            android:name=".Tenant.SecurityPaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".WastePaymentActivity"
+            android:name=".Tenant.WastePaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".RentPaymentActivity"
+            android:name=".Tenant.RentPaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateWasteActivity"
+            android:name=".Agent.CreateWasteActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateSecurityActivity"
+            android:name=".Agent.CreateSecurityActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateProfileActivity"
+            android:name=".Common.CreateProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageRentActivity"
+            android:name=".Agent.ManageRentActivity"
             android:exported="false" />
         <activity
-            android:name=".ManagePropertyActivity"
+            android:name=".Agent.ManagePropertyActivity"
             android:exported="false" />
         <activity
-            android:name=".MakePaymentActivity"
+            android:name=".Tenant.MakePaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Common.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateRentActivity"
+            android:name=".Agent.CreateRentActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".FirebaseAuth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".FirebaseAuth.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

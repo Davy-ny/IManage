@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ManagePropertyActivity"
+    tools:context=".Agent.ManagePropertyActivity"
     android:backgroundTint="@color/white"
     android:background="@color/white">
 
@@ -168,7 +168,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/create_waste"
                     android:layout_width="350dp"
-                    android:layout_height="96dp"
+                    android:layout_height="90dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
                     app:cardCornerRadius="10dp"

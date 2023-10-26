@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateWasteActivity"
+    tools:context=".Agent.CreateWasteActivity"
     android:background="@color/white"
     android:backgroundTint="@color/white">
 
